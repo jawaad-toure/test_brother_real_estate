@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
 
-## Development server
+## To launch the project
 
 To start a local development server, run:
 
@@ -10,50 +10,35 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. 
 
-## Code scaffolding
+The application will automatically reload whenever you modify any of the source files.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## About Tests
 
-```bash
-ng generate component component-name
-```
+None test have been perform
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## Issues faced
 
-## Building
+Sort functionnality does not work has I want. But it sorting were the main difficulties I faced. 
 
-To build the project run:
+However, I managed to put something together. 
 
-```bash
-ng build
-```
+To get the desired result for a sort, you have to click on the button to make it “active” and to cancel the sort, you have to click on the button again.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Clicking on an X button and then on a Y button will work, but not correctly.
 
-## Running unit tests
+## About time to complete the test
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+As I'm currently on a internship, I haven't had enough time to work as I should or to go further in the tasks to be carried out. 
 
-```bash
-ng test
-```
+For example, I had to repeat some code just to complete the sorting part. I hope I won't be penalised for that.
 
-## Running end-to-end tests
+## Technologies
 
-For end-to-end (e2e) testing, run:
+As far as technology is concerned, I've used scss and bootstrap in addition to the existing ones. 
 
-```bash
-ng e2e
-```
+Scss to avoid repeating code when writing styles and bootstrap to avoid having to write scss as a priority. 
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+So I use bootstrap as a priority and when I don't get the result I'm looking for I use scss.
