@@ -1,0 +1,54 @@
+<div class="container my-4">
+  <div class="d-flex flex-column mb-5">
+    <app-search-bar
+      (searchButtonClicked)="filteredRealEstatesList()"
+      [(search)]="search"
+    />
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      Filter by :
+      <button
+        (click)="onSortByHighPrice($event)"
+        type="button"
+        class="btn"
+        data-bs-toggle="button"
+      >
+        Price High
+      </button>
+      <button
+        (click)="onSortByLowPrice($event)"
+        type="button"
+        class="btn"
+        data-bs-toggle="button"
+      >
+        Price Low
+      </button>
+      <button
+        (click)="onSortByRecentPost($event)"
+        type="button"
+        class="btn"
+        data-bs-toggle="button"
+      >
+        Recent Post
+      </button>
+      <button
+        (click)="onSortByOldPost($event)"
+        type="button"
+        class="btn"
+        data-bs-toggle="button"
+      >
+        Old Post
+      </button>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center align-items-start">
+    @for (realEstate of realEstates$ | async; track realEstate.id) {
+    <app-real-estate-card
+      (click)="onPreviewRealEstate(realEstate.id)"
+      [realEstate]="realEstate"
+    />
+    } @empty {
+    <div class="text-center">No result found</div>
+    }
+  </div>
+</div>

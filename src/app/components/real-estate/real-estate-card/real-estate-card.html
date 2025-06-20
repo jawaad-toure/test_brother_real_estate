@@ -1,0 +1,25 @@
+<div class="realEstate-card mx-3">
+  <img
+    [src]="realEstate()?.imgUrls?.[0]"
+    class="realEstate-card_img"
+    [alt]="realEstate()?.name"
+  />
+  <div class="realEstate-card_body">
+    <div class="realEstate-card_body--line">
+      <div>{{ realEstate()?.name }}</div>
+      <div>{{ realEstate()?.city }}</div>
+    </div>
+    <div class="realEstate-card_body--line">
+      <div>{{ realEstate()?.price }}$/Day</div>
+      <div>{{ realEstate()?.area }}m2</div>
+    </div>
+    <div class="realEstate-card_body--line">
+      <div>Posted: {{ realEstate()?.posted | date:'dd/MM/yy' }}</div>
+      @if (realEstate()?.available) {
+      <div class="text-success">Available</div>
+      } @else {
+      <div class="text-danger">Occupied</div>
+      }
+    </div>
+  </div>
+</div>

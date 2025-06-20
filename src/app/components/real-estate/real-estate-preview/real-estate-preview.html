@@ -1,0 +1,100 @@
+<div
+  class="container d-flex flex-column justify-content-center align-items-center my-4"
+>
+  @if (realEstate$ | async; as realEstate) {
+  <div class="realEstate-card mx-3">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner rounded-2">
+        @for (img of realEstate[0].imgUrls; track img) {
+        <div class="carousel-item active">
+          <img
+            [src]="img"
+            class="d-block"
+            style="height: 200px; width: 200px"
+            alt=""
+          />
+        </div>
+        }
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="realEstate-card_body">
+      <div class="realEstate-card_body--line">
+        <div>{{ realEstate[0].name }}</div>
+        <div>{{ realEstate[0].city }} ({{ realEstate[0].country }})</div>
+      </div>
+
+      
+    <div class="realEstate-card_body--line">
+        <div>{{ realEstate[0].price }}$/Day</div>
+        <div>{{ realEstate[0].area }} m2</div>
+      </div>
+
+      <div class="realEstate-card_body--line my-3">
+        Description: {{ realEstate[0].description }}
+      </div>
+
+      
+    <div class="realEstate-card_body--line mb-3">
+        <div>Posted: {{ realEstate[0].posted | date:'dd/MM/yy' }}</div>
+        @if (realEstate[0].available) {
+        <div class="text-success">Available</div>
+        } @else {
+        <div class="text-danger">Occupied</div>
+        }
+      </div>
+
+      <div class="realEstate-card_body--line txt-center">
+        Own by {{ realEstate[0].owner }}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="d-flex justify-content-between align-items-center"
+    style="width: 200px"
+  >
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="
+        --bs-btn-padding-y: 0.25rem;
+        --bs-btn-padding-x: 0.5rem;
+        --bs-btn-font-size: 0.75rem;
+      "
+    >
+      Edit
+    </button>
+    <button
+        (click)="onDelete()"
+      type="button"
+      class="btn btn-danger"
+      style="
+        --bs-btn-padding-y: 0.25rem;
+        --bs-btn-padding-x: 0.5rem;
+        --bs-btn-font-size: 0.75rem;
+      "
+    >
+      Delete
+    </button>
+  </div>
+  }
+</div>
