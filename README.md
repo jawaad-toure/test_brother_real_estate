@@ -16,7 +16,7 @@ The application will automatically reload whenever you modify any of the source 
 
 ## About Tests
 
-None test have been perform
+None test have been performed
 
 
 ## Issues faced
